@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Words</title>
+  <style>
+    body {
+      background-color: #fff8dc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ff6347;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .item {
+      border: 4px solid #87cefa;
+      border-radius: 20px;
+      padding: 20px;
+      background-color: #f0fff0;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .item:hover {
+      transform: scale(1.1);
+    }
+    .item img {
+      width: 100px;
+      height: 100px;
+    }
+    .label {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #2e8b57;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tap and Learn!</h1>
+
+  <div class="container">
+    <div class="item" onclick="speak('Ball')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Ball">
+      <div class="label">Ball</div>
+    </div>
+    <div class="item" onclick="speak('Apple')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple">
+      <div class="label">Apple</div>
+    </div>
+    <div class="item" onclick="speak('Moon')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" alt="Moon">
+      <div class="label">Moon</div>
+    </div>
+    <div class="item" onclick="speak('Car')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Toy_car_red.jpg" alt="Car">
+      <div class="label">Car</div>
+    </div>
+  </div>
+
+  <script>
+    function speak(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
+</body>
+</html>
