@@ -4,44 +4,66 @@
   <meta charset="UTF-8">
   <title>First Words</title>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       background-color: #fff8dc;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
+      font-family: Comic Sans MS, cursive, sans-serif;
     }
+
     h1 {
+      text-align: center;
       color: #ff6347;
+      font-size: 3rem;
+      margin-top: 20px;
     }
+
     .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 30px;
-      margin-top: 40px;
+      padding: 40px;
+      height: calc(100% - 100px);
+      box-sizing: border-box;
     }
+
     .item {
-      border: 4px solid #87cefa;
-      border-radius: 20px;
-      padding: 20px;
       background-color: #f0fff0;
-      box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
-      width: 150px;
+      border: 6px solid #87cefa;
+      border-radius: 30px;
+      box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       transition: transform 0.2s;
     }
+
     .item:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
+
     .item img {
-      width: 100px;
-      height: 100px;
+      width: 60%;
+      max-width: 200px;
+      height: auto;
     }
+
     .label {
-      margin-top: 10px;
-      font-size: 20px;
+      margin-top: 15px;
+      font-size: 2rem;
       color: #2e8b57;
       font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
     }
   </style>
 </head>
@@ -63,7 +85,7 @@
       <div class="label">Moon</div>
     </div>
     <div class="item" onclick="speak('Car')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Toy_car_red.jpg" alt="Car">
+     <img src="https://www.shutterstock.com/image-vector/road-trip-car-happy-people-600nw-2521262713.jpg" alt="Car">
       <div class="label">Car</div>
     </div>
   </div>
