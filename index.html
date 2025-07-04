@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>First Words</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <style>
     html, body {
       margin: 0;
@@ -97,6 +100,21 @@
       speechSynthesis.speak(utterance);
     }
   </script>
+
+<script>
+  function speak(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+  }
+
+  // Disable right-click
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+</script>
+</body>
+
 
 </body>
 </html>
